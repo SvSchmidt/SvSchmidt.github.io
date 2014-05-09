@@ -1,0 +1,15 @@
+/*General*/
+	#page {
+		height:100%;
+		width:100%;
+		position:relative;
+	}
+
+	h1 {
+		color:#fff;
+		position:absolute;
+		left:30%;
+		top:20%;
+		font-size:3em;
+	}
+/*END General*/
