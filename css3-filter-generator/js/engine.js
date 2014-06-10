@@ -1,4 +1,4 @@
-var cssVals = {
+var g_objCssVals = {
 	"blur":0,
 	"grayscale":0,
 	"invert":0,
@@ -7,9 +7,10 @@ var cssVals = {
 	"sepia":0,
 	"brightness":100
 };
-var cssAttributes = ["-webkit-filter","-moz-filter","-o-filter","-ms-filter","filter"];
-var cssLine;
-var intervals = [];
+var g_ArrCssAttributes = ["-webkit-filter","-moz-filter","-o-filter","-ms-filter","filter"];
+var g_cssLine;
+var g_intervals = [];
+var g_numCSSChars = 0;
 
 $(document).ready(function() {
 	$("input[type=range]").on("focus",function() {
@@ -17,17 +18,17 @@ $(document).ready(function() {
 		var value = $elem.parent("label").attr("for");
 		var currentVal;
 
-		intervals[$elem] = setInterval(function() {
+		g_intervals[$elem] = setInterval(function() {
 			currentVal = $elem.val();
 			$elem.parent("label").children("input:not(name)").val(currentVal);
-			cssVals[value] = currentVal;
+			g_objCssVals[value] = currentVal;
 			updateCSS();
 		},100);
 	});
 
 	$("input[type=range]").focusout(function() {
 		$elem = $(this);
-		clearInterval(intervals[$elem]);
+		clearInterval(g_intervals[$elem]);
 		updateCSS();
 	});
 
@@ -46,8 +47,8 @@ $(document).ready(function() {
 	});
 
 	function updateCSS() {
-		cssLine = "";
-		$.each(cssVals,function(index,value) {
+		g_cssLine = "";
+		$.each(g_objCssVals,function(index,value) {
 
 			var maxValue = $("#filterForm").find("[name=" + index + "]").attr("max");
 			var startValue = $("#filterForm").find("[name=" + index + "]").next("input").attr("placeholder");
@@ -70,20 +71,20 @@ $(document).ready(function() {
 			}(index,value);
 
 			if(value != startValue) {
-				cssLine = cssLine + " " + index + "(" + realVal + ")";
+				g_cssLine = g_cssLine + " " + index + "(" + realVal + ")";
 			}
 		});
 
 		$("#css").html("");
 		$("#filterImgContainer").css(vendorPrefix() + "filter","");
 
-		if(cssLine != "") {
-			for(var attr in cssAttributes) {
-				$("#css").html($("#css").html() + cssAttributes[attr] + ":" + cssLine + ";\r\n");
-				$("#filterImgContainer").css(vendorPrefix() + "filter",cssLine);
+		if(g_cssLine != "") {
+			for(var attr in g_ArrCssAttributes) {
+				$("#css").html($("#css").html() + g_ArrCssAttributes[attr] + ":" + g_cssLine + ";\r\n");
+				$("#filterImgContainer").css(vendorPrefix() + "filter",g_cssLine);
 			}
+			checkOverflow();
 		}
-
 	}
 });
 
@@ -95,4 +96,20 @@ function vendorPrefix() {
 
 function isEven(number) {
 	return (number % 2 == 0);
+}
+
+function checkOverflow() {
+	$elem = $("#css");
+
+	if($elem[0].scrollHeight > parseInt($elem.css("height"))) {
+		$elem.addClass("overflow");
+	} else if(g_numCSSChars > getCSSCharLength()) {
+		$elem.removeClass("overflow");
+	}
+
+	g_numCSSChars = getCSSCharLength();
+}
+
+function getCSSCharLength() {
+	return $("#css").html().split("").length;
 }
