@@ -1,0 +1,190 @@
+/*General*/
+
+body {
+/*	background:#ccc;*/
+	font-family:arial;
+}
+
+header,
+footer {
+	background:-webkit-gradient(linear,left top,left bottom,from(#e3e3e3),to(#c8c8c8));
+	background:-moz-linear-gradient(top,#e3e3e3,#c8c8c8);
+	margin-left:13.65%;
+	position:relative;
+	width:72.5%;
+}
+
+header .content,
+footer .content {
+	width:100%;
+	height:100%;
+}
+
+.arrow {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	position: absolute;
+	display: block;
+	border-left: 20px solid transparent;
+	left:0.1%;
+}
+
+header .arrow:last-of-type,
+footer .arrow:last-of-type {
+	left: 98.4%;
+	border-right: 20px solid transparent;
+	border-left: 0;	
+}
+
+/*END General*/
+/*Header*/
+
+header {
+	margin-top:2%;
+	height:10%;
+}
+
+header .content {
+	box-shadow:1px 1px 3px #292929;
+}
+
+header .arrow {
+	border-top: 10px solid #c8c8c8;
+	top: 101.9%;
+}
+
+h1 {
+	position:absolute;
+	top:35%;
+	left:5%;
+	font-size:1.9em;
+	text-shadow:1px 1px 1px #fff;
+}
+
+/*END Header*/
+/*content*/
+
+#content {
+	margin:0 15%;
+	height:100%;
+	background:#fff;
+	padding:2%;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+	width:70%;
+}
+
+#content>* {
+	height:100%;
+}
+
+#filterImgContainer {
+	float:left;
+	margin-right:2%;
+	width:38%;
+	background:url("http://placekitten.com/500/800") center / cover;
+	height:90%;
+}
+
+aside {
+	margin-left:5%;
+	float:right;
+	width:55%;
+}
+
+label {
+	width:100%;
+	margin:3% 0;
+	display:block;
+}
+
+label>span {
+	display:block;
+	font-weight:bold;
+	margin:1% 0;
+}
+
+input[type=text] {
+	width:2.5em;
+	margin-right:0.5%;
+	color:#aaa;
+	background:transparent;
+	border:1px solid #ddd;
+}
+
+input[type=range] {
+	width:50%;
+	margin-right:2%;
+}
+
+#output h2,
+#selectbtn {
+	margin:5% 0 2% 0;
+}
+
+h2 {
+	font-size:1.5em;
+}
+
+#output h2 {
+	float:left;
+}
+
+#selectbtn {
+	display:inline-block;
+	color:#888;
+	text-decoration:none;
+	font-size:0.8em;
+	margin-left:3%;
+	margin-top:6.6%;
+}
+
+#css {
+	width: 100%;
+	height: 10em;
+	resize:none;
+	background:transparent;
+	border:none;
+}
+
+/*END content*/
+/*Footer*/
+
+footer {
+	height:5%;
+	margin-top:-2%;
+	margin-bottom:3%;
+}
+
+footer .arrow {
+	top:-25%;
+	border-bottom: 10px solid #c8c8c8;
+}
+
+footer .content,
+footer .content>* {
+	position:absolute;
+}
+
+footer .content {
+	left:5%;
+}
+
+footer p {
+	top:40%;
+	font-size:0.8rem;
+}
+
+footer img {
+	width:26px;
+	position:relative;
+	top:5%;
+}
+
+footer .github {
+	left: 12%;
+	top: 20%;
+}
+
+/*END Footer*/
