@@ -38,7 +38,8 @@ footer .content {
 
 header .arrow:last-of-type,
 footer .arrow:last-of-type {
-	left: 98.4%;
+	left:initial;
+	right:0;
 	border-right: 20px solid transparent;
 	border-left: 0;	
 }
@@ -60,7 +61,7 @@ header .content{
 
 header .arrow {
 	border-top: 10px solid #c8c8c8;
-	top: 101.9%;
+	top: 102.5%;
 }
 
 h1 {
@@ -82,6 +83,20 @@ h1 {
 	border-left:1px solid #ddd;
 	border-right:1px solid #ddd;
 	width:70%;
+}
+
+@media screen and (max-width:1300px) {
+	#content {
+		width: 69.4%;
+		margin: 0 15.3%;
+	}
+}
+
+@media screen and (min-width:1301px) and (max-width:1450px) {
+	#content {
+		width:69.7%;
+		margin:0 15.1%;
+	}
 }
 
 #content>* {
