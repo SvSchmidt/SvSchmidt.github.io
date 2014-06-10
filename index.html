@@ -3,7 +3,9 @@
 <head>
 	<!--***META***-->
 	<meta charset="UTF-8" />
-	<title>Sven Schmidt | github</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+	<meta name="description" content="A simple tool to generate vendor-prefixed code for CSS3s filter-values (blur, brightness, saturate, grayscale etc.) for using it in your projects." />
+	<title>CSS3 Filter Generator</title>
 
 	<!--***CSS***-->
 	<link rel="stylesheet" href="http://cdn.lifesetter.de/css/reset.css">
@@ -13,18 +15,81 @@
 	<!--[if lt IE 9]>
 	<script src="http://cdn.lifesetter.de/js/html5shiv.js"></script>
 	<![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="js/starfield.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script src="js/engine.js"></script>
 
 	<!--***LINKS***-->
 
 </head>
 <body>
-	<header></header>
-	<section id="page">
-		<h1>Nothing to see here right now!</h1>
+	<header>
+		<div class="content">
+			<h1>CSS3 Filter Generator</h1>
+		</div>
+		<span class="arrow"></span>
+		<span class="arrow"></span>
+	</header>
+	<section id="content">
+		<section id="filterImgContainer"></section>
+		<aside>
+			<div id="filters">
+				<h2>Filters</h2>
+				<form action="" name="filterForm" id="filterForm">
+					<label for="blur">
+						<span>Blur</span>
+						<input type="range" class="slider" name="blur" min="0" max="200" value="0">
+						<input type="text" disabled placeholder="0">px
+					</label>
+					<label for="grayscale">
+						<span>Grayscale</span>
+						<input type="range" class="slider" name="grayscale" min="0" max="100" value="0">
+						<input type="text" disabled placeholder="0">%
+					</label>
+					<label for="invert">
+						<span>Invert</span>
+						<input type="range" class="slider" name="invert" min="0" max="100" value="0">
+						<input type="text" disabled placeholder="0">%
+					</label>
+					<label for="brightness">
+						<span>Brightness</span>
+						<input type="range" class="slider" name="brightness" min="0" max="1000" value="100">
+						<input type="text" disabled placeholder="100">%
+					</label>
+					<label for="saturate">
+						<span>Saturation</span>
+						<input type="range" class="slider" name="saturate" min="0" max="1000" value="100">
+						<input type="text" disabled placeholder="100">%
+					</label>
+					<label for="contrast">
+						<span>Contrast</span>
+						<input type="range" class="slider" name="contrast" min="0" max="1000" value="0">
+						<input type="text" disabled placeholder="0">%
+					</label>		
+					<label for="sepia">
+						<span>Sepia</span>
+						<input type="range" class="slider" name="sepia" min="0" max="100" value="0">
+						<input type="text" disabled placeholder="0">%
+					</label>				
+				</form>
+			</div>
+			<div id="output">
+				<h2>CSS Output</h2> <a href="javascript:" id="selectbtn">Select</a>
+				<form action="" name="cssForm" id="cssForm">
+					<textarea disabled spellcheck="false" name="css" id="css" cols="30" rows="10"></textarea>
+				</form>
+				<a id="caniuse" href="http://caniuse.com/#feat=css-filters" target="_blank">Can I use CSS3 filters yet?</a>
+			</div>
+		</aside>
 	</section>
-	<footer></footer>
+	<footer>
+		<span class="arrow"></span>
+		<span class="arrow"></span>
+		<div class="content">
+			<p>&copy; 2014 Sven Schmidt</p> 
+			<div class="github">
+				<a href="http://github.com/SvSchmidt" title="Github profile" target="_blank"><img src="img/github.png" alt="Github" /></a>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
