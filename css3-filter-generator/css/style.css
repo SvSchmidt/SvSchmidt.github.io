@@ -113,6 +113,7 @@ label>span {
 	display:inline-block;
 	font-weight:bold;
 	margin:1% 0;
+	width:100%;
 }
 
 input[type=text] {
