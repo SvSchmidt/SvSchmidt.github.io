@@ -76,27 +76,13 @@ h1 {
 /*content*/
 
 #content {
-	margin:0 15%;
+	width:calc(72.5% - 40px);
+	margin:0 calc(13.65% + 20px);
 	height:100%;
 	background:#fff;
 	padding:2%;
 	border-left:1px solid #ddd;
 	border-right:1px solid #ddd;
-	width:70%;
-}
-
-@media screen and (max-width:1300px) {
-	#content {
-		width: 69.4%;
-		margin: 0 15.3%;
-	}
-}
-
-@media screen and (min-width:1301px) and (max-width:1450px) {
-	#content {
-		width:69.7%;
-		margin:0 15.1%;
-	}
 }
 
 #content>* {
@@ -107,7 +93,7 @@ h1 {
 	float:left;
 	margin-right:2%;
 	width:38%;
-	background:url("http://placekitten.com/500/800") center / cover;
+	background:url("../img/bg.jpg") center / cover;
 	height:90%;
 }
 
@@ -222,8 +208,8 @@ footer img {
 }
 
 footer .github {
-	left: 12%;
-	top: 20%;
+	left:150px;
+	top:20%;
 }
 
 /*END Footer*/
