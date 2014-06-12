@@ -110,7 +110,7 @@ label {
 }
 
 label>span {
-	display:block;
+	display:inline-block;
 	font-weight:bold;
 	margin:1% 0;
 }
