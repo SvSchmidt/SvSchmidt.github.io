@@ -76,12 +76,12 @@ $(document).ready(function() {
 		});
 
 		$("#css").html("");
-		$("#filterImgContainer").css(vendorPrefix() + "filter","");
+		$("#filterImg").css(vendorPrefix() + "filter","");
 
 		if(g_cssLine != "") {
 			for(var attr in g_ArrCssAttributes) {
 				$("#css").html($("#css").html() + g_ArrCssAttributes[attr] + ":" + g_cssLine + ";\r\n");
-				$("#filterImgContainer").css(vendorPrefix() + "filter",g_cssLine);
+				$("#filterImg").css(vendorPrefix() + "filter",g_cssLine);
 			}
 			checkOverflow();
 		}

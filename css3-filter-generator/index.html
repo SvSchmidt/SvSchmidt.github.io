@@ -16,6 +16,7 @@
 	<script src="http://cdn.lifesetter.de/js/html5shiv.js"></script>
 	<![endif]-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="js/dropzone.js"></script>
 	<script src="js/engine.js"></script>
 
 	<!--***LINKS***-->
@@ -30,7 +31,12 @@
 		<span class="arrow"></span>
 	</header>
 	<section id="content">
-		<section id="filterImgContainer"></section>
+		<section id="filterImgContainer">
+			<div id="filterImg"></div>
+			<form action="/path/to/nowhere" class="dropzone" id="dropzone">
+				<input type="file" name="uploadedImg">
+			</form>			
+		</section>
 		<aside>
 			<div id="filters">
 				<h2>Filters</h2>

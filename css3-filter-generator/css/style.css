@@ -89,7 +89,6 @@ h1 {
 	border-right:1px solid #ddd;
 }
 
-#filterImgContainer,
 aside {
 	height:60%;
 }
@@ -98,8 +97,52 @@ aside {
 	float:left;
 	margin-right:2%;
 	width:38%;
+	height:65%;
+	position:relative;
+}
+
+#filterImg {
 	background:url("../img/bg.jpg") center / cover;
-	height:70%;
+	height:100%;
+}
+
+#filterImg.dz-drag-hover {
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+	filter: grayscale(1);
+}
+
+#filterImgContainer form {
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+}
+
+.dz-preview {
+	display:none;
+}
+
+input[name=uploadedImg] {
+	height:100%;
+	display:none;
+}
+
+#filterImgContainer .dz-message {
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	font-size: 1.5em;
+	color: #fff;
+	text-shadow: 1px 2px 4px #000;
+	background: #252525;
+	height: 70px;
+	width: 300px;
+	text-align: center;
+	padding-top: 3%;
+	opacity: 0.8;
 }
 
 aside {
