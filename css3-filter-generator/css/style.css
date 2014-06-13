@@ -99,6 +99,7 @@ aside {
 	width:38%;
 	height:65%;
 	position:relative;
+	cursor:pointer;
 }
 
 #filterImg {
@@ -121,6 +122,7 @@ aside {
 	top:0;
 }
 
+/*dz = dropzone*/
 .dz-preview {
 	display:none;
 }
