@@ -303,7 +303,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       params: {},
       clickable: true,
       ignoreHiddenFiles: true,
-      acceptedFiles: null,
+      acceptedFiles: "image/*",
       acceptedMimeTypes: null,
       autoProcessQueue: true,
       autoQueue: true,
