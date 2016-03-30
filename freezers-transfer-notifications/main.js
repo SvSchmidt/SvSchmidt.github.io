@@ -1,7 +1,6 @@
 var freezersTransferNotificatr = (function () {
     function freezersTransferNotificatr() {
         this.feeds = ['http://www.eliteprospects.com/rss_confirmed-transfers.php', 'http://www.eliteprospects.com/rss_rumours.php'];
-        this.notificationIcon = 'images/maske.jpg';
         this._lastChecked = null;
         if (freezersTransferNotificatr.instance) {
             return;
@@ -39,7 +38,6 @@ var freezersTransferNotificatr = (function () {
     };
     freezersTransferNotificatr.prototype._createNotificationInterval = function () {
         new Notification('Notification service started!', {
-            icon: this.notificationIcon,
             body: 'Waiting for new transfers....'
         });
         this._checkForNews();
@@ -65,14 +63,12 @@ var freezersTransferNotificatr = (function () {
         });
     };
     freezersTransferNotificatr.prototype._sendNotifications = function (result) {
-        var _this = this;
         var lastChecked = this.lastChecked;
         result.forEach(function (x) {
             if (lastChecked && Date.create(x.publishedDate) < lastChecked) {
                 return;
             }
             (new Notification('New transfer!', {
-                icon: _this.notificationIcon,
                 body: x.title,
             })).onclick = window.open.bind(window, x.link);
         });

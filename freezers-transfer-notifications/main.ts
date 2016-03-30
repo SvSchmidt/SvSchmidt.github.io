@@ -21,11 +21,6 @@ class freezersTransferNotificatr {
     private feeds = ['http://www.eliteprospects.com/rss_confirmed-transfers.php', 'http://www.eliteprospects.com/rss_rumours.php'];
 
     /**
-     * Notification constructor allows to define an icon which shall be displayed next to the actual notification
-     */
-    public notificationIcon = 'images/maske.jpg';
-
-    /**
      * tdetermines when we last checked for updates
      */
     private _lastChecked: Date = null;
@@ -78,7 +73,6 @@ class freezersTransferNotificatr {
      */
     private _createNotificationInterval() {
         new Notification('Notification service started!', {
-            icon: this.notificationIcon,
             body: 'Waiting for new transfers....'
         });
 
@@ -138,7 +132,6 @@ class freezersTransferNotificatr {
 
             // send notification, open provided link on click (refers to the source of the transfer)
             (new Notification('New transfer!', {
-                icon: this.notificationIcon,
                 body: x.title,
             })).onclick = window.open.bind(window, x.link);
         })
